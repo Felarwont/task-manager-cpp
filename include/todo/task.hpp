@@ -4,13 +4,13 @@
 
 class Task {
 public:
-    Task(std::string title) : title_(title) {}
+    Task(std::string title = "Empty task") : title_(title) {}
 
     std::string getTitle();
-    bool isDone() ;
+    bool isDone();
     void complete();
 
 private:
     std::string title_;
-    bool done_;
+    bool done_ = false;
 };
