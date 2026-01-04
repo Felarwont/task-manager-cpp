@@ -4,7 +4,7 @@
 
 class Task {
 public:
-    Task(std::string title = "Empty task") : title_(title) {}
+    Task(const std::string title = "Empty task") : title_(title) {}
 
     std::string getTitle();
     bool isDone();
