@@ -32,9 +32,9 @@ void TaskManager::completeTask(int index) {
     tasks[index - 1].complete();
 }
 
-Task* TaskManager::getTask(int index) {
+TaskInfo TaskManager::getTaskInfo(int index) {
     if (index - 1 < 0 || index - 1 > tasks.size()) {
         throw std::out_of_range("Index out of range");
     }
-    return tasks.data() + index - 1;
+    return TaskInfo{tasks[index - 1].getTitle(), tasks[index - 1].isDone()};
 }

@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <todo/task.hpp>
+#include <todo/task_info.hpp>
 
 class TaskManager {
 public:
@@ -10,7 +11,7 @@ public:
     void printTasks();
     void removeTasks(int index);
     void completeTask(int index);
-    Task* getTask(int index);
+    TaskInfo getTaskInfo(int index);
 private:
     std::vector<Task> tasks;
 };

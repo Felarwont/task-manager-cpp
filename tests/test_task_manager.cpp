@@ -1,3 +1,4 @@
+#include <iostream>
 #include <todo/task_manager.hpp>
 
 int main() {
@@ -20,7 +21,11 @@ int main() {
     }
     manager.printTasks();
 
-    Task* task = manager.getTask(5);
-    task->complete();
+    TaskInfo task = manager.getTaskInfo(5);
+    std::cout << "Title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
+    manager.printTasks();
+    manager.completeTask(5);
+    task = manager.getTaskInfo(5);
+    std::cout << "Title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
     manager.printTasks();
 }
