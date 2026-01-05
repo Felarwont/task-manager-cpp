@@ -1,35 +1,37 @@
 #include <iostream>
 #include <todo/task_manager.hpp>
+#include <todo/task_render.hpp>
 
 int main() {
     TaskManager manager;
-    manager.printTasks();
+    TaskRender::printTasks(manager);
 
     manager.addTask("Xz ya bezdelnik");
-    manager.printTasks();
+    TaskRender::printTasks(manager);
 
     for (int i = 0; i < 5; i++) {
         manager.addTask("xz" + std::to_string(i + 1));
     }
-    manager.printTasks();
+    TaskRender::printTasks(manager);
 
     manager.removeTasks(3);
-    manager.printTasks();
+    TaskRender::printTasks(manager);
 
     for (int i = 0; i < 4; i++) {
         manager.completeTask(i + 1);
     }
-    manager.printTasks();
+    TaskRender::printTasks(manager);
 
     TaskInfo task = manager.getTaskInfo(5);
-    std::cout << "Title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
-    manager.printTasks();
+    std::cout << "Index: " << task.index << " title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
+    TaskRender::printTasks(manager);
     manager.completeTask(5);
     task = manager.getTaskInfo(5);
-    std::cout << "Title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
-    manager.printTasks();
-    std::vector<TaskInfo> info = manager.getAllTaskInfo();
-    for (auto& task : info) {
-        std::cout << "Title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
+    std::cout << "Index: " << task.index << " title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
+    TaskRender::printTasks(manager);
+
+    std::vector<TaskInfo> tasks = manager.getAllTaskInfo();
+    for (auto& task : tasks) {
+        std::cout << "Index: " << task.index << " title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
     }
 }
