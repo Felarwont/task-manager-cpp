@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <vector>
 #include <todo/task_manager.hpp>
 #include <todo/task.hpp>
 
@@ -37,4 +38,12 @@ TaskInfo TaskManager::getTaskInfo(int index) {
         throw std::out_of_range("Index out of range");
     }
     return TaskInfo{tasks[index - 1].getTitle(), tasks[index - 1].isDone()};
+}
+
+std::vector<TaskInfo> TaskManager::getAllTaskInfo() {
+    std::vector<TaskInfo> info;
+    for (auto& task : tasks) {
+        info.push_back(TaskInfo{task.getTitle(), task.isDone()});
+    }
+    return info;
 }

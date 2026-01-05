@@ -12,6 +12,7 @@ public:
     void removeTasks(int index);
     void completeTask(int index);
     TaskInfo getTaskInfo(int index);
+    std::vector<TaskInfo> getAllTaskInfo();
 private:
     std::vector<Task> tasks;
 };
