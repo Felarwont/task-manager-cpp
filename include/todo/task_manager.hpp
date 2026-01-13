@@ -9,9 +9,9 @@
 class TaskManager {
 public:
     void addTask(const std::string title);
-    void removeTasks(uint index);
-    void completeTask(uint index);
-    TaskInfo getTaskInfo(uint index);
+    void removeTasks(size_t index);
+    void completeTask(size_t index);
+    TaskInfo getTaskInfo(size_t index);
     std::vector<TaskInfo> getAllTaskInfo();
 private:
     std::vector<Task> tasks;

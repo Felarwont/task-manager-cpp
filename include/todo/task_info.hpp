@@ -3,5 +3,5 @@
 struct TaskInfo {
     std::string title;
     bool done;
-    uint index;
+    size_t index;
 };

@@ -19,15 +19,15 @@ int main() {
     TaskRender::printTasks(manager);
 
     for (int i = 0; i < 4; i++) {
-        manager.completeTask(i + 1);
+        manager.completeTask(i);
     }
     TaskRender::printTasks(manager);
 
-    TaskInfo task = manager.getTaskInfo(5);
+    TaskInfo task = manager.getTaskInfo(4);
     std::cout << "Index: " << task.index << " title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
     TaskRender::printTasks(manager);
-    manager.completeTask(5);
-    task = manager.getTaskInfo(5);
+    manager.completeTask(4);
+    task = manager.getTaskInfo(4);
     std::cout << "Index: " << task.index << " title: " << task.title << " done: " << ((task.done) ? "true" : "false") << std::endl;
     TaskRender::printTasks(manager);
 

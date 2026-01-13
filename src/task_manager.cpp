@@ -8,31 +8,31 @@
 
 void TaskManager::addTask(const std::string title) { tasks.push_back(Task(title)); }
 
-void TaskManager::removeTasks(uint index) {
+void TaskManager::removeTasks(size_t index) {
     if (index > tasks.size()) {
         throw std::out_of_range("Index out of range");
     }
-    tasks.erase(tasks.begin() + index - 1);
+    tasks.erase(tasks.begin() + index);
 }
 
-void TaskManager::completeTask(uint index) {
-    if (index - 1 > tasks.size()) {
+void TaskManager::completeTask(size_t index) {
+    if (index > tasks.size()) {
         throw std::out_of_range("Index out of range");
     }
-    tasks[index - 1].complete();
+    tasks[index].complete();
 }
 
-TaskInfo TaskManager::getTaskInfo(uint index) {
-    if (index - 1 > tasks.size()) {
+TaskInfo TaskManager::getTaskInfo(size_t index) {
+    if (index > tasks.size()) {
         throw std::out_of_range("Index out of range");
     }
-    return TaskInfo{tasks[index - 1].getTitle(), tasks[index - 1].isDone(), index};
+    return TaskInfo{tasks[index].getTitle(), tasks[index].isDone(), index};
 }
 
 std::vector<TaskInfo> TaskManager::getAllTaskInfo() {
     std::vector<TaskInfo> info;
-    for (uint i = 0; i < tasks.size(); i++) {
-        info.push_back(TaskInfo{tasks[i].getTitle(), tasks[i].isDone(), i + 1});
+    for (size_t i = 0; i < tasks.size(); i++) {
+        info.push_back(TaskInfo{tasks[i].getTitle(), tasks[i].isDone(), i});
     }
     return info;
 }
