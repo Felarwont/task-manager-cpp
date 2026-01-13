@@ -1,4 +1,3 @@
-#include <iostream>
 #include <stdexcept>
 #include <string>
 #include <vector>
@@ -8,7 +7,7 @@
 
 void TaskManager::addTask(const std::string title) { tasks.push_back(Task(title)); }
 
-void TaskManager::removeTasks(size_t index) {
+void TaskManager::removeTask(size_t index) {
     if (index > tasks.size()) {
         throw std::out_of_range("Index out of range");
     }
@@ -20,6 +19,14 @@ void TaskManager::completeTask(size_t index) {
         throw std::out_of_range("Index out of range");
     }
     tasks[index].complete();
+}
+
+void TaskManager::deleteCompleted() {
+    for (int i = tasks.size() - 1; i >= 0; i--) {
+        if (tasks[i].isDone()) {
+            removeTask(i);
+        }
+    }
 }
 
 TaskInfo TaskManager::getTaskInfo(size_t index) {
