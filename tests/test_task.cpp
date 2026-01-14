@@ -4,11 +4,11 @@
 #include "todo/task.hpp"
 
 int main() {
-    Task empty_task;
+    todo::Task empty_task;
 
     assert(empty_task.getTitle() == "Empty task");
 
-    Task task("Cook a pie");
+    todo::Task task("Cook a pie");
 
     assert(task.getTitle() == "Cook a pie");
     assert(!task.isDone());

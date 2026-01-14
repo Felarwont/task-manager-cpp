@@ -1,6 +1,8 @@
 #include "todo/task_manager.hpp"
 
-class TaskRender {
-public:
-    static void printTasks(TaskManager& manager);
-};
+namespace todo {
+    class TaskRender {
+    public:
+        static void printTasks(TaskManager& manager);
+    };
+}

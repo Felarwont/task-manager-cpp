@@ -3,11 +3,11 @@
 
 #include "todo/task.hpp"
 
-std::string Task::getTitle() { return title_; }
+std::string todo::Task::getTitle() { return title_; }
 
-bool Task::isDone() { return done_; }
+bool todo::Task::isDone() { return done_; }
 
-void Task::complete() {
+void todo::Task::complete() {
     if (done_) {
         std::cout << "[*] The task has already been completed" << std::endl;
         return;

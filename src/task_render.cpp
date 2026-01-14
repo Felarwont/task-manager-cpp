@@ -2,7 +2,7 @@
 
 #include "todo/task_render.hpp"
 
-void TaskRender::printTasks(TaskManager& manager) {
+void todo::TaskRender::printTasks(TaskManager& manager) {
     std::vector<TaskInfo> tasks = manager.getAllTaskInfo();
     if (tasks.size() == 0) {
         std::cout << "The task list is empty. Enjoy!" << std::endl;
