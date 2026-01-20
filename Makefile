@@ -7,7 +7,7 @@ BUILD_TYPE ?= Release
 PURPUR_START := \033[35;m
 PURPUR_END := \033[0m
 
-.PHONY: all build clean help
+.PHONY: all build example clean help
 
 all: build example
 
