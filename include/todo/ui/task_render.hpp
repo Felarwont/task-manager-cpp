@@ -1,3 +1,5 @@
+#pragma once
+
 #include "todo/task_manager.hpp"
 
 namespace todo {

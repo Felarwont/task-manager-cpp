@@ -9,7 +9,7 @@
 namespace todo {
     class TaskManager {
     public:
-        void addTask(const std::string title);
+        void addTask(const std::string& title);
         void removeTask(size_t index);
         void completeTask(size_t index);
         void deleteCompleted();

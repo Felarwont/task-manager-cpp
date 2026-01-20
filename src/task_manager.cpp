@@ -5,7 +5,7 @@
 #include "todo/task_manager.hpp"
 #include "todo/task.hpp"
 
-void todo::TaskManager::addTask(const std::string title) { tasks.push_back(Task(title)); }
+void todo::TaskManager::addTask(const std::string& title) { tasks.push_back(Task(title)); }
 
 void todo::TaskManager::removeTask(size_t index) {
     if (index > tasks.size()) {
