@@ -6,6 +6,7 @@
 ### через Make:
 ``` bash
 make           # Собрать всё сразу
-make build     # Сборка библиотеки
+make build     # Сборка библиотеки через CMake
 make example   # Сборка примера использования
 make clean     # Очистка директории build/
+
